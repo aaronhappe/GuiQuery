@@ -7,19 +7,25 @@ class Intern extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.addSelClicked = this.addSelClicked.bind(this);
   }
 
   addSelClicked() { 
-    // var myInternObj = new InternObj();
-    // console.log(myInternObj);
-    this.hasAddedSelector = true;
+    // this.setState({
+    //   addedSelector: true
+    // });
+    alert('ugh');
+  }
+  returnButton() {
+    if (!this.state.addedSelector) {
+      return <AddSelector onClick={this.addSelClicked}/>
+    } 
   }
 
   render() {
     return (
       <div className="intern">
       	<Header />
-        asdf
         <AddSelector />
       </div>
     )
