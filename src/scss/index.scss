@@ -1,0 +1,79 @@
+$myPink: #ff737c;
+$myGreen: #96c500;
+$myBlue: #02bdd8;
+$myDkGrey: #222222;
+$myOffWhite: #e2e1dd;
+$myLtGrey: #c0bcb6;
+
+.lp-to-edit {
+  margin: 400px auto 0;
+  text-align: center;
+  width: 960px;
+}
+.intern {
+  position: absolute;
+  top:0;
+  background: white;
+  width: 960px;
+  margin: 0 auto;
+  border: 1px solid $myDkGrey;
+  padding: 20px;
+  h1 {
+    color: $myDkGrey;
+    text-align:center;
+  }
+  .input-section {
+    padding-top: 20px;
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    p{
+
+    }
+    .add {
+      background: $myPink;
+      border: 1px solid $myPink;
+      padding: 5px;
+      text-transform: uppercase;
+      font-family: sans-serif;
+      width: 20%;
+      margin:0;
+      box-sizing:border-box;
+      display: inline-block;
+      color: $myDkGrey;
+    }
+    cursor:pointer;
+    input {
+      padding:5px;
+      width:80%;
+      box-sizing:border-box;
+      margin:0;
+      border: 1px solid $myOffWhite;
+      display: inline-block;
+      background: $myLtGrey;
+    }
+  }
+  .links {
+    width: 400px;
+    textarea {
+      width: 78%;
+    }
+  }
+}
+
+.links-to-change {
+  border: 1px solid $myGreen;
+}
+.review-selector-2{
+  display: flex;
+  flex-wrap: wrap;
+  pre {
+    background: $myOffWhite;
+    padding: 15px;
+    width: 80%;
+  }
+} 
+
+
+

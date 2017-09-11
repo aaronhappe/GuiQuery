@@ -104,7 +104,7 @@ gulp.task('jsclient', function() {
 gulp.task('css', ['images'], function() {
 
   var postCssOpts = [
-  assets({ loadPaths: ['client/images/'] }),
+  assets({ loadPaths: ['images/'] }),
   autoprefixer({ browsers: ['last 2 versions', '> 2%'] }),
   mqpacker
   ];
@@ -113,7 +113,7 @@ gulp.task('css', ['images'], function() {
     postCssOpts.push(cssnano);
   }
 
-  return gulp.src(folder.src + 'client/scss/**/*.scss')
+  return gulp.src(folder.src + 'scss/**/*.scss')
     .pipe(sass({
       outputStyle: 'nested',
       imagePath: 'images/',
@@ -127,12 +127,11 @@ gulp.task('css', ['images'], function() {
 
 gulp.task('images', function() {
   var out = folder.build + 'images/';
-  return gulp.src(folder.src + 'client/images/**/*')
+  return gulp.src(folder.src + 'images/**/*')
     .pipe(newer(out))
     .pipe(imagemin({ optimizationLevel: 5 }))
     .pipe(gulp.dest(out));
 });
-
 gulp.task('watch', function() {
 
   // javscript module changes
