@@ -7,6 +7,7 @@ class AddSelector extends React.Component {
     super(props);
     this.state = {addedSelector: false};
     this.addSelClicked = this.addSelClicked.bind(this);
+    var example = InternObj.returnCssSel(['cat', 'dog']);
   }
   addSelClicked() { 
     this.setState({
