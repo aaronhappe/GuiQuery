@@ -9,24 +9,20 @@ class Intern extends React.Component {
     this.state = {};
   }
 
-  addSelClicked() {
+  addSelClicked() { 
     // var myInternObj = new InternObj();
     // console.log(myInternObj);
     this.hasAddedSelector = true;
   }
 
   render() {
-
     return (
       <div className="intern">
       	<Header />
-          <div className="selectors input-section" onClick={this.addSelClicked}>
-          { !this.hasAddedSelector
-            <AddSelector />
-          }
-          </div>
+        asdf
+        <AddSelector />
       </div>
-    );
+    )
   }
 }
 

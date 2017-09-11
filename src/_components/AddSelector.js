@@ -16,7 +16,7 @@ class AddSelector extends React.Component {
 				    <p>Add CSS Selector</p>
 				    <input id="selectorInput" placeholder="#myId .myClass p" />
 				    <span className="add">Add</span>
-				  </div>
+				</div>
 
 	  )
   }
