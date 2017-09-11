@@ -15,7 +15,7 @@ import $ from "jquery";
 
 		  pageHTML = $('.lp-to-edit').html();
 
-		  $(pageHTML).appendTo(reviewSelector);
+		  $(reviewSelector).appendTo(pageHTML);
 		  return 'returning for test';
 		}
 	}
