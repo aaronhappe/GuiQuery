@@ -1,23 +1,31 @@
 import $ from "jquery";
 
-	var InternObj =  {
-		returnCssSel : function(initArr){
-		  var initLinkSel = initArr.shift(),
-		  pageHTML = '',
-		  reviewSelector = $('.review-selector-2'),
-		  userLinks = initArr.shift(),
-		  userLink = '';
+var InternObj =  {
+	returnCssSel : function(initSel){
+console.log(initSel);
+	  // var initLinkSel = initArr.shift(),
+	  $(initSel).addClass('el-to-change');
+	  // oldHrefs = [],
+	  // userLinks = [];
 
-		  $(initLinkSel).each(function() {
-		    userLink = userLinks.shift();
-		    $(this).attr('href', userLink);
-		  });
+	  // $(initLinkSel).each(function() {
+	  //   oldHrefs.push($(this).attr('href'))
+	  //   $(this).addClass('el-to-change');
+	  // });
+	  // console.log(initArr.length);
+	  // console.log(oldHrefs.length);
+	  // $(initArr).each(
+	  // 	function(){
+	  		
+	  // 	}
+	  // );
 
-		  pageHTML = $('.lp-to-edit').html();
-
-		  $(reviewSelector).appendTo(pageHTML);
-		  return 'returning for test';
-		}
+	  // return 'returning for test';
+	},
+	resetReview : function(initSel){
+		$(initSel).removeClass('el-to-change');
+		$('.review-body').html('');
 	}
+}
 
-	module.exports = InternObj;
+module.exports = InternObj;

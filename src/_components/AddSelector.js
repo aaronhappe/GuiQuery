@@ -5,26 +5,53 @@ import InternObj from "_components/InternObj";
 class AddSelector extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {addedSelector: false};
+    this.state = {
+      addedSelector: false,
+      selInputVal: '.lp-to-edit'
+    };
     this.addSelClicked = this.addSelClicked.bind(this);
-    var example = InternObj.returnCssSel(['cat', 'dog']);
+    this.resetSelector = this.resetSelector.bind(this);
+    this.handleSelChange = this.handleSelChange.bind(this);
   }
-  addSelClicked() { 
+  addSelClicked(props) { 
     this.setState({
       addedSelector: true
     });
-    alert('hehe');
+    this.props.reviewFunc(this.state.selInputVal);
+    var example = InternObj.returnCssSel(this.state.selInputVal);
+
+  }
+  confirmSelector(){
+
+  }
+  resetSelector(){
+    this.setState({
+      addedSelector: false
+    });
+    InternObj.resetReview(this.state.selInputVal)
+  }
+  handleSelChange(event) {
+    this.setState({selInputVal: event.target.value});
+      
   }
   returnButton() {
     if (!this.state.addedSelector) {
       return (
       	<div>
 			    <p>Add CSS Selector</p>
-			    <input id="selectorInput" placeholder="#myId .myClass p" />
+          <p>{this.state.selInputVal}</p>
+			    <input id="selectorInput" placeholder="ex: .lp div > a" value={this.state.selInputVal} onChange={this.handleSelChange}/>
 			    <span className="add" onClick={this.addSelClicked}>Add</span>
       	</div>
       )
-    } 
+    } else {
+       return (
+        <div>
+          <span className="add">Good to go?</span>
+          <span className="add" onClick={this.resetSelector}>No no, that's not right.</span>
+        </div>
+      )
+    }
   }
 
   render() {

@@ -75,5 +75,18 @@ $myLtGrey: #c0bcb6;
   }
 } 
 
+.lp-to-edit {
+  a {
+    display: block;
+    text-decoration: none;
+    color: $myBlue;
+    text-transform: uppercase;
+    padding: 1em;
+  }
+  .el-to-change {
+    border: 1px solid $myGreen;
+  }
+}
+
 
 
