@@ -7,7 +7,7 @@ class AddSelector extends React.Component {
     super(props);
     this.state = {
       addedSelector: false,
-      selInputVal: '.lp-to-edit'
+      selInputVal: ''
     };
     this.addSelClicked = this.addSelClicked.bind(this);
     this.resetSelector = this.resetSelector.bind(this);
@@ -28,6 +28,9 @@ class AddSelector extends React.Component {
     this.setState({
       addedSelector: false
     });
+    this.setState({
+      selInputVal: ''
+    })
     InternObj.resetReview(this.state.selInputVal)
   }
   handleSelChange(event) {
@@ -39,7 +42,6 @@ class AddSelector extends React.Component {
       return (
       	<div>
 			    <p>Add CSS Selector</p>
-          <p>{this.state.selInputVal}</p>
 			    <input id="selectorInput" placeholder="ex: .lp div > a" value={this.state.selInputVal} onChange={this.handleSelChange}/>
 			    <span className="add" onClick={this.addSelClicked}>Add</span>
       	</div>

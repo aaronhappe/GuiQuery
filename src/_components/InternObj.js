@@ -4,7 +4,7 @@ var InternObj =  {
 	returnCssSel : function(initSel){
 console.log(initSel);
 	  // var initLinkSel = initArr.shift(),
-	  $(initSel).addClass('el-to-change');
+	  $('.lp-to-edit ' + initSel).addClass('el-to-change');
 	  // oldHrefs = [],
 	  // userLinks = [];
 

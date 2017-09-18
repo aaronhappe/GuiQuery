@@ -2,18 +2,23 @@ $myPink: #ff737c;
 $myGreen: #96c500;
 $myBlue: #02bdd8;
 $myDkGrey: #222222;
-$myOffWhite: #e2e1dd;
-$myLtGrey: #c0bcb6;
+$myOffWhite: #E6E6E6;
+// $myOffWhite: #E1E1E1;
+$myLtGrey: #ccc;
 
 .lp-to-edit {
   margin: 400px auto 0;
   text-align: center;
   width: 960px;
+
+}
+#intern {
+  background: pink;
 }
 .intern {
   position: absolute;
   top:0;
-  background: white;
+  background: $myOffWhite;
   width: 960px;
   margin: 0 auto;
   border: 1px solid $myDkGrey;
@@ -24,12 +29,13 @@ $myLtGrey: #c0bcb6;
   }
   .input-section {
     padding-top: 20px;
-    width: 400px;
+    width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    p{
-
+    div:first-child {
+      width: 50%;
+      margin: 0 auto;
     }
     .add {
       background: $myPink;
@@ -42,16 +48,18 @@ $myLtGrey: #c0bcb6;
       box-sizing:border-box;
       display: inline-block;
       color: $myDkGrey;
+      height: 32px;
     }
     cursor:pointer;
     input {
+      height: 32px;
       padding:5px;
       width:80%;
       box-sizing:border-box;
       margin:0;
       border: 1px solid $myOffWhite;
       display: inline-block;
-      background: $myLtGrey;
+      background: white;
     }
   }
   .links {
@@ -59,6 +67,9 @@ $myLtGrey: #c0bcb6;
     textarea {
       width: 78%;
     }
+  }
+  .review-body {
+    background: $myLtGrey;
   }
 }
 
