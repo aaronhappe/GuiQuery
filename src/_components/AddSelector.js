@@ -48,7 +48,7 @@ class AddSelector extends React.Component {
       )
     } else {
        return (
-        <div>
+        <div className="reviewBool">
           <span className="add">Good to go?</span>
           <span className="add" onClick={this.resetSelector}>No no, that's not right.</span>
         </div>
