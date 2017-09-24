@@ -7,10 +7,12 @@ class AddSelector extends React.Component {
     super(props);
     this.state = {
       addedSelector: false,
+      addedSelectorTrue: false,
       selInputVal: ''
     };
     this.addSelClicked = this.addSelClicked.bind(this);
     this.resetSelector = this.resetSelector.bind(this);
+    this.confirmSelector = this.confirmSelector.bind(this);
     this.handleSelChange = this.handleSelChange.bind(this);
   }
   addSelClicked(props) { 
@@ -21,7 +23,22 @@ class AddSelector extends React.Component {
     var example = InternObj.returnCssSel(this.state.selInputVal);
 
   }
-  confirmSelector(){
+  confirmSelector(props){
+
+    this.setState({
+      addedSelector: true
+    });
+
+    this.setState({
+      addedSelectorTrue: true
+    });
+
+    this.setState({
+      selInputVal: true
+    });
+  console.log(this.state.selInputVal);
+    this.props.reviewFunc(true);
+    InternObj.resetReview(this.state.selInputVal)
 
   }
   resetSelector(){
@@ -46,11 +63,11 @@ class AddSelector extends React.Component {
 			    <span className="add" onClick={this.addSelClicked}>Add</span>
       	</div>
       )
-    } else {
+    } else if(!this.state.addedSelectorTrue){
        return (
         <div className="reviewBool">
-          <span className="add">Good to go?</span>
-          <span className="add" onClick={this.resetSelector}>No no, that's not right.</span>
+          <span className="addd" onClick={this.confirmSelector}>GTG</span>
+          <span className="add" onClick={this.resetSelector}>Nope</span>
         </div>
       )
     }
