@@ -7,7 +7,7 @@ class AddSelector extends React.Component {
     super(props);
     this.state = {
       addedSelector: false,
-      addedSelectorTrue: false,
+      showAddLinks: false,
       selInputVal: ''
     };
     this.addSelClicked = this.addSelClicked.bind(this);
@@ -19,26 +19,26 @@ class AddSelector extends React.Component {
     this.setState({
       addedSelector: true
     });
-    this.props.reviewFunc(this.state.selInputVal);
+    this.props.passToReviewFunc(this.state.selInputVal);
     var example = InternObj.returnCssSel(this.state.selInputVal);
 
   }
   confirmSelector(props){
-
+    var numLinksSelected = InternObj.numLinksSelected(this.state.selInputVal);
     this.setState({
       addedSelector: true
     });
 
     this.setState({
-      addedSelectorTrue: true
+      showAddLinks: true
     });
-
-    this.setState({
-      selInputVal: true
-    });
-  console.log(this.state.selInputVal);
-    this.props.reviewFunc(true);
-    InternObj.resetReview(this.state.selInputVal)
+    // check into this
+    // this.setState({
+    //   selInputVal: true
+    // });
+    // check into this
+    this.props.passToAddLinksFunc(true, numLinksSelected);
+    InternObj.resetReview(this.state.selInputVal);
 
   }
   resetSelector(){
@@ -63,7 +63,7 @@ class AddSelector extends React.Component {
 			    <span className="add" onClick={this.addSelClicked}>Add</span>
       	</div>
       )
-    } else if(!this.state.addedSelectorTrue){
+    } else if(!this.state.showAddLinks){
        return (
         <div className="reviewBool">
           <span className="addd" onClick={this.confirmSelector}>GTG</span>

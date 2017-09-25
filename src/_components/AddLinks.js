@@ -6,18 +6,27 @@ class AddLinks extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selInputVal: ''
+      linkInputVal: ''
     };
-  }
+  this.addLinksClicked = this.addLinksClicked.bind(this);
+      this.handleLinkChange = this.handleLinkChange.bind(this);
 
+  }
+  addLinksClicked(props) { 
+    
+    console.log('asdf');
+  }
+  handleLinkChange(event) {
+    this.setState({linkInputVal: event.target.value});
+      
+  }
   returnButton(props) {
-   console.log(this.props);
-    if (this.props.propTwo === true) {
+    if (this.props.showLinks === true) {
       return (
       	<div>
 			    <p>Add Links to change</p>
-			    <input id="selectorInput" placeholder="ex: http://www.links" value={this.state.selInputVal} onChange={this.handleSelChange}/>
-			    <span className="add" onClick={this.addSelClicked}>Bad</span>
+			    <input id="selectorInput" value={this.state.linkInputVal}  onChange={this.handleLinkChange}/>
+			    <span className="add" onClick={this.addLinksClicked}>Baddd</span>
       	</div>
       )
     } 
@@ -27,6 +36,7 @@ class AddLinks extends React.Component {
 	  return (
 		  <div className="input-section">
 				{this.returnButton()}
+        {this.state.linkInputVal}
 			</div>
 	  )
   }

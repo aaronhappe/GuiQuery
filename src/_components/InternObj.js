@@ -2,7 +2,6 @@ import $ from "jquery";
 
 var InternObj =  {
 	returnCssSel : function(initSel){
-console.log(initSel);
 	  // var initLinkSel = initArr.shift(),
 	  $('.lp-to-edit ' + initSel).addClass('el-to-change');
 	  // oldHrefs = [],
@@ -21,6 +20,13 @@ console.log(initSel);
 	  // );
 
 	  // return 'returning for test';
+	},
+	numLinksSelected : function(initSel){
+		var numSelected = $('.el-to-change');
+		return numSelected.length
+	},
+	numbLinksToReplace: function(){
+
 	},
 	resetReview : function(initSel){
 		$(initSel).removeClass('el-to-change');

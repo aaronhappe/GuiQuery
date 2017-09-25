@@ -9,35 +9,33 @@ class Intern extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataFromAddSel: 'd af',
-      dataFromAddLinks: '',
+      dataFromAddSel: '',
+      showLinksModule: false,
     };
     this.passToReview = this.passToReview.bind(this);
-    this.passToSelLinks = this.passToSelLinks.bind(this);
-    console.log(this.state.dataFromAddSel);
+    this.passToAddLinks = this.passToAddLinks.bind(this);
   }
 
   passToReview(dataFrom){ 
-    console.log(dataFrom);
     this.setState({
       dataFromAddSel: dataFrom
     });
   }
-  passToSelLinks(dataFrom){
-    console.log("asdffff");
-    console.log(dataFrom);
+  passToAddLinks(dataFrom, numSelected){
+    console.log(numSelected);
     this.setState({
-      dataFromAddLinks: dataFrom
-    });
+      showLinksModule: dataFrom
+    }); 
   }
   render() {
 
     return (
       <div className="intern">
+      cache: a lalala
       	<Header />
-        <AddSelector reviewFunc={this.passToReview}/>
-        <AddLinks linkFunc={this.passToSelLinks} propTwo={this.state.dataFromAddSel}/>
-        <Review dataFrom={this.state.dataFrom}/>
+        <AddSelector passToReviewFunc={this.passToReview} passToAddLinksFunc={this.passToAddLinks}/>
+        <AddLinks showLinks={this.state.showLinksModule}/>
+        <Review dataFrom={this.state.dataFromAddSel}/>
       </div>
     )
   }
